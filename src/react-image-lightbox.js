@@ -30,7 +30,6 @@ import {
   SOURCE_MOUSE,
   SOURCE_TOUCH,
   SOURCE_POINTER,
-  MIN_SWIPE_DISTANCE,
 } from './constant';
 import baseStyles from './style.scss';
 
@@ -1061,7 +1060,7 @@ class ReactImageLightbox extends Component {
       return;
     }
 
-    if (xDiffAbs < MIN_SWIPE_DISTANCE) {
+    if (xDiffAbs < this.props.minSwipeDistance) {
       const boxRect = this.getLightboxRect();
       if (xDiffAbs < boxRect.width / 4) {
         return;
@@ -1805,6 +1804,8 @@ ReactImageLightbox.propTypes = {
   // Set to false to disable zoom functionality and hide zoom buttons
   enableZoom: PropTypes.bool,
 
+  minSwipeDistance: PropTypes.number,
+
   // Aria-labels
   nextLabel: PropTypes.string,
   prevLabel: PropTypes.string,
@@ -1842,6 +1843,7 @@ ReactImageLightbox.defaultProps = {
   wrapperClassName: '',
   zoomInLabel: 'Zoom in',
   zoomOutLabel: 'Zoom out',
+  minSwipeDistance: 200,
 };
 
 export default ReactImageLightbox;

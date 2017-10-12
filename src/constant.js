@@ -34,6 +34,3 @@ export const SOURCE_ANY = 0;
 export const SOURCE_MOUSE = 1;
 export const SOURCE_TOUCH = 2;
 export const SOURCE_POINTER = 3;
-
-// Minimal swipe distance
-export const MIN_SWIPE_DISTANCE = 200;
